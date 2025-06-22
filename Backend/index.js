@@ -4,6 +4,7 @@ import connectDB from './db/db.js'
 import userRegister from './routes/authRoutes.js'
 import userLogin from './routes/authRoutes.js'
 import submissionRoutes from './routes/submissionRoutes.js';
+import showAssignment from './routes/showSubmission.js'
 import path from 'path';
 import fs from 'fs';
 import cors from 'cors'
@@ -31,7 +32,7 @@ app.get('/',(req,res)=>{
 app.use('/api',userRegister)
 app.use('/api',userLogin)
 app.use('/api', submissionRoutes); 
-
+app.use('/api',showAssignment)
 
 app.listen(PORT,()=>{
     connectDB()

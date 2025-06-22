@@ -3,7 +3,6 @@ import multer from "multer";
 import path from "path";
 const router=express.Router()
 import { submitAssignment } from "../controller/submissionController.js";
-// upload.js
 
 import { v2 as cloudinary } from 'cloudinary';
 import { CloudinaryStorage } from 'multer-storage-cloudinary';
@@ -11,10 +10,9 @@ import { CloudinaryStorage } from 'multer-storage-cloudinary';
 
 
 
-// Cloudinary config
+
 cloudinary.config();
 
-// Storage config
 const storage = new CloudinaryStorage({
   cloudinary,
    upload_preset: 'public',
@@ -30,7 +28,6 @@ const storage = new CloudinaryStorage({
   },
 });
 
-// Allow only images and PDFs
 const fileFilter = (req, file, cb) => {
   const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf'];
   if (allowedTypes.includes(file.mimetype)) {
@@ -46,6 +43,6 @@ const upload = multer({ storage, fileFilter });
 
 
 
-router.post("/submissions", upload.single("file"), submitAssignment);
+router.post('/submissions', upload.single('attachment'), submitAssignment);
 
 export default router;

@@ -7,7 +7,7 @@ export const submitAssignment = async (req, res) => {
   try {
     const { title, description, studentName, studentId } = req.body;
     const attachment = req.file ? req.file.path : null;
-console.log(req.file)
+    console.log(req.file)
     const newSubmission = new Submission({
       title,
       description,

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Eye, EyeOff, User, Mail, Lock, Sparkles } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
 export default function SexySidebarAuth() {
   const [activeForm, setActiveForm] = useState("login");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const navigate=useNavigate()
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -31,21 +32,21 @@ export default function SexySidebarAuth() {
       activeForm === 'login'
         ? {
             email: formData.email,
-            password: formData.password
+            password: formData.password,
           }
         : {
             userName: formData.userName,
             email: formData.email,
             password: formData.password,
-            confirmPassword: formData.confirmPassword
+            confirmPassword: formData.confirmPassword,
           };
 
     const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     });
 
     const result = await response.json();
@@ -53,6 +54,11 @@ export default function SexySidebarAuth() {
     if (response.ok) {
       alert(`${activeForm === 'login' ? 'Login' : 'Registration'} successful!`);
       console.log(result);
+
+      if (activeForm === 'login') {
+         localStorage.setItem("isLoggedIn", "true");
+        navigate('/');
+      }
     } else {
       alert(`Error: ${result.message || 'Something went wrong'}`);
     }
@@ -63,6 +69,7 @@ export default function SexySidebarAuth() {
 };
 
 
+
   return (
     <div className="min-h-screen flex bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
       <div className="flex-1 flex items-center justify-center p-8">
@@ -70,9 +77,9 @@ export default function SexySidebarAuth() {
           <div className="mb-8">
             <Sparkles className="w-16 h-16 mx-auto mb-4 text-pink-400" />
             <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-              Welcome Student Lms
+              Welcome Edu portal
             </h1>
-            <p className="text-xl opacity-80">Experience of Future Study</p>
+            <p className="text-xl opacity-80">Experience of Future Study For Student</p>
           </div>
         </div>
       </div>
