@@ -26,8 +26,8 @@ export default function SexySidebarAuth() {
   try {
     const endpoint =
       activeForm === 'login'
-        ? 'http://localhost:8080/api/login'
-        : 'http://localhost:8080/api/register';
+        ? 'https://studentform-m78a.onrender.com/api/login'
+        : 'https://studentform-m78a.onrender.com/api/register';
     const payload =
       activeForm === 'login'
         ? {

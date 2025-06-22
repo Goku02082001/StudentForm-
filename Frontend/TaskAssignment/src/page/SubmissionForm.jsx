@@ -76,7 +76,7 @@ export default function AssignmentSubmissionForm() {
       formDataToSend.append('attachment', formData.attachment);
     }
 
-    const response = await fetch('http://localhost:8080/api/submissions', {
+    const response = await fetch('https://studentform-m78a.onrender.com/api/submissions', {
       method: 'POST',
       body: formDataToSend
     });

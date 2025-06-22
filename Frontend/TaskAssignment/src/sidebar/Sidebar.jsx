@@ -35,7 +35,7 @@ export default function Sidebar() {
   const fetchSubmissions = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:8080/api/getSubmission");
+      const response = await fetch("https://studentform-m78a.onrender.com/api/getSubmission");
       const data = await response.json();
       setSubmissions(Array.isArray(data.data) ? data.data : []);
     } catch (err) {
