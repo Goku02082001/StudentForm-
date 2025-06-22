@@ -5,11 +5,6 @@ A full-stack MERN (MongoDB, Express, React, Node.js) application that allows stu
 ---
 
 ## 📁 Project Structure
-
-### 🖥️ Backend (`/backend`)
-
-Node.js + Express server for authentication, assignment submission, and fetching student data.
-
 <details>
 <summary>📂 Folder Structure</summary>
 
