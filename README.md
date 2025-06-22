@@ -4,6 +4,27 @@ A full-stack MERN (MongoDB, Express, React, Node.js) application that allows stu
 
 ---
 
+## 🌐 Live Links
+
+- 🔗 **Frontend**: [https://student-form-pearl.vercel.app/](https://student-form-pearl.vercel.app/)
+- 🔗 **Backend**: [https://studentform-m78a.onrender.com/](https://studentform-m78a.onrender.com/)
+
+---
+## 📸 Screenshots
+
+### 🔐 Login Page
+![Login](./Frontend/TaskAssignment/public/Login.png)
+
+### 🏠 Home Dashboard
+![Home](./Frontend/TaskAssignment/public/HomePage.png)
+
+### 📝 Submit Assignment
+![Submission Form](./Frontend/TaskAssignment/public/SubmissionForm.png)
+
+### 📄 Show Submissions
+![Show Submission](./Frontend/TaskAssignment/public/ShowSubmission.png)
+
+---
 ## 📁 Project Structure
 <details>
 <summary>📂 Folder Structure</summary>
